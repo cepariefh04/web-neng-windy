@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Sederhana</title>
+    <style>
+      :root {
+        --primary: #ffb8c7;
+        --secondary: #ffdae5;
+        --third: #f9d7d6;
+        --basic: #f5f5f5;
+        --grey: #333333;
+        --light: #ffeef2;
+        --light-blue: #b0c1db;
+        --accent: #8eacd0;
+      }
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--basic);
+        color: var(--grey);
+      }
+
+      /* Header */
+      header {
+        background-color: var(--light);
+        color: var(--grey);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid var(--accent); /* Soft Mint Accent */
+      }
+
+      /* Navigation Bar */
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: var(--primary);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--basic);
+        margin: 0 15px;
+        font-size: 18px;
+        padding: 8px 15px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: var(--accent);
+        color: var(--light);
+      }
+
+      nav a.active {
+        background-color: var(--accent);
+        color: var(--light);
+      }
+
+      /* Sections */
+      section {
+        padding: 40px 20px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      section:not(:last-child) {
+        border-bottom: 1px solid var(--secondary);
+      }
+
+      h2 {
+        color: var(--primary);
+        border-bottom: 2px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      /* Individual Card */
+      .card {
+        background-color: var(--light);
+        border-radius: 10px;
+        width: 200px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .card h3,
+      h4 {
+        margin: 0;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-icon {
+        font-size: 50px;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 20px;
+      }
+
+      /* Big Portfolio Card */
+      .portfolio-card {
+        background-color: var(--light);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .portfolio-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      /* Images Container */
+      .images-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+
+      .image-card {
+        background-color: var(--basic);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 45%;
+      }
+
+      .image-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .portfolio-description {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      #contact {
+        background-color: var(--light); /* Soft Peach */
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .contact-table th,
+      .contact-table td {
+        padding: 15px;
+        border-bottom: 1px solid var(--primary); /* Pink Pastel */
+      }
+
+      .contact-table th {
+        background-color: var(--primary); /* Pink Pastel */
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .contact-table td {
+        font-size: 16px;
+        color: #333333;
+      }
+
+      .contact-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .contact-table a {
+        text-decoration: none;
+        color: var(--grey);
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .contact-table a:hover {
+        color: var(--accent); /* Lavender Accent */
+      }
+
+      /* Footer */
+      footer {
+        background-color: #ffdae5;
+        color: #333;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Website N Windy</h1>
+      <p>Selamat datang di website N Windy!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About Me</a>
+      <a href="#portfolio" class="nav-link">Portofolio</a>
+      <a href="#education" class="nav-link">Pendidikan</a>
+      <a href="#contact" class="nav-link">Kontak</a>
+    </nav>
+
+    <!-- Main Content -->
+    <section id="home">
+      <h2>Home</h2>
+      <p>Ini adalah halaman utama dari website sederhana ini.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Saya adalah seorang Mahasiswa Program Studi Manajemen Pemasaran di
+        Universitas Komputer Indonesia. Saya merupakan anak kedua dari 3
+        bersaudara.
+      </p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portofolio</h2>
+      <p>Berikut adalah portofolio Saya</p>
+      <div class="portfolio-container">
+        <!-- Portfolio Card 1 -->
+        <div class="portfolio-card">
+          <h3 class="portfolio-title">Lomba PMR (Palang Merah Remaja)</h3>
+          <div class="images-container">
+            <div class="image-card">
+              <img src="images/porto1.jpg" alt="Gambar Porto 1 - 1" />
+            </div>
+            <div class="image-card">
+              <img src="images/porto1-2.jpg" alt="Gambar Proyek 1 - 2" />
+            </div>
+          </div>
+          <p class="portfolio-description">
+            Sejak SMP hingga SMA saya sudah menjadi bagian dari organisasi
+            Palang Merah Remaja (PMR). Pmr banyak memberikan pengalaman yang
+            berharga. Di sana, saya belajar tentang nilai kemanusiaan dan
+            memberikan kesempatan untuk membantu sesama di lingkungan sekolah.
+          </p>
+          <p class="portfolio-description">
+            Pmr juga memberikan saya kesempatan untuk mengikuti lomba yang
+            menjadi pengalaman tak terlupakan dalam masa remaja, saya
+            mendapatkan Juara Terbaik Ke-5 Tingkat WIRA Cabang Lomba "Tandu
+            Darurat Putri Tutup Mata"
+          </p>
+        </div>
+
+        <!-- Portfolio Card 2 -->
+        <div class="portfolio-card">
+          <h3 class="portfolio-title">Kursus Make Up</h3>
+          <div class="images-container">
+            <div class="image-card">
+              <img src="images/porto2.jpg" alt="Gambar Proyek 2 - 1" />
+            </div>
+            <div class="image-card">
+              <img src="images/porto2-1.jpg" alt="Gambar Proyek 2 - 2" />
+            </div>
+          </div>
+          <p class="portfolio-description">
+            Saya juga pernah mengikuti kursus makeup profesional dan berhasil
+            mendapatkan sertifikat sebagai bukti kompetensi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Pendidikan</h2>
+      <p>Berikut adalah riwayat pendidikan Saya</p>
+      <div class="card-container">
+        <!-- SD Card -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3>SD</h3>
+          <h4>Sekolah Dasar</h4>
+          <p>
+            Saya bersekolah di SDN Sukadana Kecamatan Ciparay Kabupaten Bandung,
+            Jawa Barat
+          </p>
+        </div>
+        <!-- SMP Card -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>SMP</h3>
+          <h4>Sekolah menengah Pertama</h4>
+          <p>
+            Saya bersekolah di SMPN Negeri 1 Ciparay kecamatan Ciparay kabupaten
+            Bandung Jawa Barat
+          </p>
+        </div>
+        <!-- SMA Card -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>SMA</h3>
+          <h4>Sekolah Menengah Atas</h4>
+          <p>
+            Saya bersekolah di SMA Negeri 1 Ciparay kecamatan Ciparay kabupaten
+            Bandung Jawa Barat
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Kontak</h2>
+      <table class="contact-table">
+        <tr>
+          <th>Informasi</th>
+          <th>Detail</th>
+        </tr>
+        <tr>
+          <td><i class="fa-brands fa-whatsapp"></i> Nomor Telepon</td>
+          <td>
+            <a href="https://wa.me/+6289668082627" target="_blank"
+              >+62 896-6808-2627</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><i class="fa-regular fa-envelope"></i> Email</td>
+          <td>
+            <a
+              href="mailto:neng.21424012@mahasiswa.unikom.ac.id"
+              target="_blank"
+              >neng.21424012@mahasiswa.unikom.ac.id</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><i class="fa-brands fa-instagram"></i> Instagram</td>
+          <td>
+            <a href="https://instagram.com/nwindyy" target="_blank">@nwindyy</a>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="fa-solid fa-location-dot"></i> Alamat</td>
+          <td>Ciparay, Kab. Bandung, Jawa Barat</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Website N Windy Nurlaila Maulani.❤</p>
+    </footer>
+
+    <script>
+      // JavaScript untuk menambahkan active class pada navigasi
+      const navLinks = document.querySelectorAll(".nav-link");
+      window.addEventListener("hashchange", () => {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === location.hash) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Set active pada saat pertama kali load
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    </script>
+  </body>
+</html>
