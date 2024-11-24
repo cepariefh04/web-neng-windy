@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Sederhana</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">NWindy<span>.</span></a>
+      <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Me</a>
+        <a href="portofolio.html" class="nav-link">Portofolio</a>
+        <a href="pendidikan.html" class="nav-link">Pendidikan</a>
+        <a href="kontak.html" class="nav-link">Kontak</a>
+      </nav>
+    </header>
+
+    <section id="portofolio" class="portofolio">
+      <h2>Portofolio</h2>
+      <p>Berikut adalah portofolio Saya</p>
+      <div class="portofolio-container">
+        <div class="portofolio-card">
+          <h3 class="portofolio-title">Lomba PMR (Palang Merah Remaja)</h3>
+          <div class="images-container">
+            <div class="image-card">
+              <img src="images/porto1.jpg" alt="Gambar Porto 1 - 1" />
+            </div>
+            <div class="image-card">
+              <img src="images/porto1-2.jpg" alt="Gambar Proyek 1 - 2" />
+            </div>
+          </div>
+          <p class="portofolio-description">
+            Sejak SMP hingga SMA saya sudah menjadi bagian dari organisasi
+            Palang Merah Remaja (PMR). Pmr banyak memberikan pengalaman yang
+            berharga. Di sana, saya belajar tentang nilai kemanusiaan dan
+            memberikan kesempatan untuk membantu sesama di lingkungan sekolah.
+          </p>
+          <p class="portofolio-description">
+            Pmr juga memberikan saya kesempatan untuk mengikuti lomba yang
+            menjadi pengalaman tak terlupakan dalam masa remaja, saya
+            mendapatkan Juara Terbaik Ke-5 Tingkat WIRA Cabang Lomba "Tandu
+            Darurat Putri Tutup Mata"
+          </p>
+        </div>
+
+        <div class="portofolio-card">
+          <h3 class="portofolio-title">Kursus Make Up</h3>
+          <div class="images-container">
+            <div class="image-card">
+              <img src="images/porto2.jpg" alt="Gambar Proyek 2 - 1" />
+            </div>
+            <div class="image-card">
+              <img src="images/porto2-1.jpg" alt="Gambar Proyek 2 - 2" />
+            </div>
+          </div>
+          <p class="portofolio-description">
+            Saya juga pernah mengikuti kursus makeup profesional dan berhasil
+            mendapatkan sertifikat sebagai bukti kompetensi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Website N Windy Nurlaila Maulani.❤</p>
+    </footer>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+      window.addEventListener("hashchange", () => {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === location.hash) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    </script>
+  </body>
+</html>

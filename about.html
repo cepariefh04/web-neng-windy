@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Sederhana</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">NWindy<span>.</span></a>
+      <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Me</a>
+        <a href="portofolio.html" class="nav-link">Portofolio</a>
+        <a href="pendidikan.html" class="nav-link">Pendidikan</a>
+        <a href="kontak.html" class="nav-link">Kontak</a>
+      </nav>
+    </header>
+
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="left">
+          <p>
+            Halo! Nama saya Neng Windy Nurlaila Maulani, saya anak ke 2 dari 3
+            bersaudara, sejak kecil saya tinggal di Bandung tepatnya kabupaten
+            Bandung, Ciparay walau tinggal di Bandung saya dilahirkan di Garut
+            pada bulan September 2004 sekarang usia saya sudah 20 tahun, saat
+            ini saya sedang menempuh pendidikan D3 di Universitas Komputer
+            Indonesia, jurusan Manajemen Pemasaran.
+          </p>
+          <p>
+            Saya memiliki dua hobi, yaitu menonton seperti menonton story
+            telling, food vlogger, mukbang dan memasak. Dari hobi tersebut, saya
+            terinspirasi untuk membuka usaha di bidang food and beverage.
+          </p>
+          <p>
+            Sebelumnya, saya adalah lulusan dari SMA Negeri 1 Ciparay jurusan
+            Ilmu Pengetahuan Sosial . Selama masa sekolah, saya aktif mengikuti
+            organisasi, seperti organisasi
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Ikatan Remaja Masjid dan Palang Merah Remaja, Pengalaman dalam 2
+            organisasi ini membantu saya mengembangkan kemampuan dalam kerja
+            sama antar anggota, kepemimpinan, dan komunikasi.
+          </p>
+          <p>
+            Setelah lulus SMA saya mengikuti kursus make-up selama 1 bulan, dari
+            kursus ini saya mendapatkan banyak sekali pengetahuan baru mengenai
+            jenis make-up, jenis kulit, alat make-up yang digunakan, cara
+            menyasak rambut, cara mengenakan pakaian pada pengantin, hantaran
+            pengantin, tau urutan skin prep, tau etika sebagai perias dan yang
+            paling penting tau mengenai teknik make-up.
+          </p>
+          <p>Sekian cerita singkat tentang hidup saya, terimakasih!</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Website N Windy Nurlaila Maulani.❤</p>
+    </footer>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+      window.addEventListener("hashchange", () => {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === location.hash) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    </script>
+  </body>
+</html>
