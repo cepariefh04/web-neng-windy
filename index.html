@@ -4,231 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Sederhana</title>
-    <style>
-      :root {
-        --primary: #ffb8c7;
-        --secondary: #ffdae5;
-        --third: #f9d7d6;
-        --basic: #f5f5f5;
-        --grey: #333333;
-        --light: #ffeef2;
-        --light-blue: #b0c1db;
-        --accent: #8eacd0;
-      }
-      body {
-        font-family: Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--basic);
-        color: var(--grey);
-      }
-
-      /* Header */
-      header {
-        background-color: var(--light);
-        color: var(--grey);
-        padding: 20px;
-        text-align: center;
-        border-bottom: 4px solid var(--accent); /* Soft Mint Accent */
-      }
-
-      /* Navigation Bar */
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: var(--primary);
-        padding: 15px 0;
-        position: sticky;
-        top: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--basic);
-        margin: 0 15px;
-        font-size: 18px;
-        padding: 8px 15px;
-        border-radius: 10px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      nav a:hover {
-        background-color: var(--accent);
-        color: var(--light);
-      }
-
-      nav a.active {
-        background-color: var(--accent);
-        color: var(--light);
-      }
-
-      /* Sections */
-      section {
-        padding: 40px 20px;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      section:not(:last-child) {
-        border-bottom: 1px solid var(--secondary);
-      }
-
-      h2 {
-        color: var(--primary);
-        border-bottom: 2px solid var(--accent);
-        display: inline-block;
-        padding-bottom: 5px;
-        margin-bottom: 20px;
-      }
-
-      .card-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      /* Individual Card */
-      .card {
-        background-color: var(--light);
-        border-radius: 10px;
-        width: 200px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .card h3,
-      h4 {
-        margin: 0;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-      }
-
-      .card-icon {
-        font-size: 50px;
-        color: var(--primary);
-        margin-bottom: 15px;
-      }
-
-      .portfolio-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 20px;
-      }
-
-      /* Big Portfolio Card */
-      .portfolio-card {
-        background-color: var(--light);
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .portfolio-title {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      /* Images Container */
-      .images-container {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        margin-bottom: 20px;
-        align-items: center;
-      }
-
-      .image-card {
-        background-color: var(--basic);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        width: 45%;
-      }
-
-      .image-card img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .portfolio-description {
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-        text-align: left;
-      }
-
-      #contact {
-        background-color: var(--light); /* Soft Peach */
-        padding: 40px 20px;
-        text-align: center;
-        margin-top: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .contact-table {
-        width: 80%;
-        margin: 20px auto;
-        border-collapse: collapse;
-        text-align: left;
-        background-color: #ffffff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .contact-table th,
-      .contact-table td {
-        padding: 15px;
-        border-bottom: 1px solid var(--primary); /* Pink Pastel */
-      }
-
-      .contact-table th {
-        background-color: var(--primary); /* Pink Pastel */
-        color: #ffffff;
-        text-align: center;
-      }
-
-      .contact-table td {
-        font-size: 16px;
-        color: #333333;
-      }
-
-      .contact-table tr:last-child td {
-        border-bottom: none;
-      }
-
-      .contact-table a {
-        text-decoration: none;
-        color: var(--grey);
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .contact-table a:hover {
-        color: var(--accent); /* Lavender Accent */
-      }
-
-      /* Footer */
-      footer {
-        background-color: #ffdae5;
-        color: #333;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-        font-size: 14px;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -238,43 +14,81 @@
     />
   </head>
   <body>
-    <!-- Header -->
     <header>
-      <h1>Website N Windy</h1>
-      <p>Selamat datang di website N Windy!</p>
+      <a class="logo" href="#home">NWindy<span>.</span></a>
+      <nav class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#portofolio" class="nav-link">Portofolio</a>
+        <a href="#education" class="nav-link">Pendidikan</a>
+        <a href="#contact" class="nav-link">Kontak</a>
+      </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About Me</a>
-      <a href="#portfolio" class="nav-link">Portofolio</a>
-      <a href="#education" class="nav-link">Pendidikan</a>
-      <a href="#contact" class="nav-link">Kontak</a>
-    </nav>
-
-    <!-- Main Content -->
-    <section id="home">
-      <h2>Home</h2>
-      <p>Ini adalah halaman utama dari website sederhana ini.</p>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Welcome to My Website</h1>
+          <p>
+            Explore and discover more about my portofolio, education, and
+            contact information.
+          </p>
+          <a href="#about" class="button">See more</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/nwindy.jpeg" alt="Hero Image" />
+      </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about">
       <h2>About Me</h2>
-      <p>
-        Saya adalah seorang Mahasiswa Program Studi Manajemen Pemasaran di
-        Universitas Komputer Indonesia. Saya merupakan anak kedua dari 3
-        bersaudara.
-      </p>
+      <div class="about-content">
+        <div class="left">
+          <p>
+            Halo! Nama saya Neng Windy Nurlaila Maulani, saya anak ke 2 dari 3
+            bersaudara, sejak kecil saya tinggal di Bandung tepatnya kabupaten
+            Bandung, Ciparay walau tinggal di Bandung saya dilahirkan di Garut
+            pada bulan September 2004 sekarang usia saya sudah 20 tahun, saat
+            ini saya sedang menempuh pendidikan D3 di Universitas Komputer
+            Indonesia, jurusan Manajemen Pemasaran.
+          </p>
+          <p>
+            Saya memiliki dua hobi, yaitu menonton seperti menonton story
+            telling, food vlogger, mukbang dan memasak. Dari hobi tersebut, saya
+            terinspirasi untuk membuka usaha di bidang food and beverage.
+          </p>
+          <p>
+            Sebelumnya, saya adalah lulusan dari SMA Negeri 1 Ciparay jurusan
+            Ilmu Pengetahuan Sosial . Selama masa sekolah, saya aktif mengikuti
+            organisasi, seperti organisasi
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Ikatan Remaja Masjid dan Palang Merah Remaja, Pengalaman dalam 2
+            organisasi ini membantu saya mengembangkan kemampuan dalam kerja
+            sama antar anggota, kepemimpinan, dan komunikasi.
+          </p>
+          <p>
+            Setelah lulus SMA saya mengikuti kursus make-up selama 1 bulan, dari
+            kursus ini saya mendapatkan banyak sekali pengetahuan baru mengenai
+            jenis make-up, jenis kulit, alat make-up yang digunakan, cara
+            menyasak rambut, cara mengenakan pakaian pada pengantin, hantaran
+            pengantin, tau urutan skin prep, tau etika sebagai perias dan yang
+            paling penting tau mengenai teknik make-up.
+          </p>
+          <p>Sekian cerita singkat tentang hidup saya, terimakasih!</p>
+        </div>
+      </div>
     </section>
 
-    <section id="portfolio">
+    <section id="portofolio" class="portofolio">
       <h2>Portofolio</h2>
       <p>Berikut adalah portofolio Saya</p>
-      <div class="portfolio-container">
-        <!-- Portfolio Card 1 -->
-        <div class="portfolio-card">
-          <h3 class="portfolio-title">Lomba PMR (Palang Merah Remaja)</h3>
+      <div class="portofolio-container">
+        <div class="portofolio-card">
+          <h3 class="portofolio-title">Lomba PMR (Palang Merah Remaja)</h3>
           <div class="images-container">
             <div class="image-card">
               <img src="images/porto1.jpg" alt="Gambar Porto 1 - 1" />
@@ -283,23 +97,22 @@
               <img src="images/porto1-2.jpg" alt="Gambar Proyek 1 - 2" />
             </div>
           </div>
-          <p class="portfolio-description">
+          <p class="portofolio-description">
             Sejak SMP hingga SMA saya sudah menjadi bagian dari organisasi
             Palang Merah Remaja (PMR). Pmr banyak memberikan pengalaman yang
             berharga. Di sana, saya belajar tentang nilai kemanusiaan dan
             memberikan kesempatan untuk membantu sesama di lingkungan sekolah.
           </p>
-          <p class="portfolio-description">
+          <p class="portofolio-description">
             Pmr juga memberikan saya kesempatan untuk mengikuti lomba yang
             menjadi pengalaman tak terlupakan dalam masa remaja, saya
             mendapatkan Juara Terbaik Ke-5 Tingkat WIRA Cabang Lomba "Tandu
-            Darurat Putri Tutup Mata"
+            Darurat Putri Tutup Mata"
           </p>
         </div>
 
-        <!-- Portfolio Card 2 -->
-        <div class="portfolio-card">
-          <h3 class="portfolio-title">Kursus Make Up</h3>
+        <div class="portofolio-card">
+          <h3 class="portofolio-title">Kursus Make Up</h3>
           <div class="images-container">
             <div class="image-card">
               <img src="images/porto2.jpg" alt="Gambar Proyek 2 - 1" />
@@ -308,19 +121,18 @@
               <img src="images/porto2-1.jpg" alt="Gambar Proyek 2 - 2" />
             </div>
           </div>
-          <p class="portfolio-description">
+          <p class="portofolio-description">
             Saya juga pernah mengikuti kursus makeup profesional dan berhasil
-            mendapatkan sertifikat sebagai bukti kompetensi.
+            mendapatkan sertifikat sebagai bukti kompetensi.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="education">
+    <section id="education" class="education">
       <h2>Pendidikan</h2>
       <p>Berikut adalah riwayat pendidikan Saya</p>
       <div class="card-container">
-        <!-- SD Card -->
         <div class="card">
           <div class="card-icon">
             <i class="fas fa-school"></i>
@@ -332,7 +144,6 @@
             Jawa Barat
           </p>
         </div>
-        <!-- SMP Card -->
         <div class="card">
           <div class="card-icon">
             <i class="fas fa-book"></i>
@@ -344,7 +155,6 @@
             Bandung Jawa Barat
           </p>
         </div>
-        <!-- SMA Card -->
         <div class="card">
           <div class="card-icon">
             <i class="fas fa-graduation-cap"></i>
@@ -353,13 +163,13 @@
           <h4>Sekolah Menengah Atas</h4>
           <p>
             Saya bersekolah di SMA Negeri 1 Ciparay kecamatan Ciparay kabupaten
-            Bandung Jawa Barat
+            Bandung Jawa Barat
           </p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact">
       <h2>Kontak</h2>
       <table class="contact-table">
         <tr>
@@ -397,13 +207,11 @@
       </table>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>&copy; 2024 Website N Windy Nurlaila Maulani.❤</p>
     </footer>
 
     <script>
-      // JavaScript untuk menambahkan active class pada navigasi
       const navLinks = document.querySelectorAll(".nav-link");
       window.addEventListener("hashchange", () => {
         navLinks.forEach((link) => {
@@ -414,7 +222,6 @@
         });
       });
 
-      // Set active pada saat pertama kali load
       window.dispatchEvent(new HashChangeEvent("hashchange"));
     </script>
   </body>
